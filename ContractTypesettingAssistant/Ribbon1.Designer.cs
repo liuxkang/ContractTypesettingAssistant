@@ -37,6 +37,7 @@
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.button1 = this.Factory.CreateRibbonButton();
+            this.button8 = this.Factory.CreateRibbonButton();
             this.group2 = this.Factory.CreateRibbonGroup();
             this.button2 = this.Factory.CreateRibbonButton();
             this.button3 = this.Factory.CreateRibbonButton();
@@ -44,7 +45,6 @@
             this.button5 = this.Factory.CreateRibbonButton();
             this.button6 = this.Factory.CreateRibbonButton();
             this.button7 = this.Factory.CreateRibbonButton();
-            this.button8 = this.Factory.CreateRibbonButton();
             this.button9 = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
@@ -72,6 +72,13 @@
             this.button1.Name = "button1";
             this.button1.ShowImage = true;
             this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            // 
+            // button8
+            // 
+            this.button8.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button8.Label = "定制首页";
+            this.button8.Name = "button8";
+            this.button8.ShowImage = true;
             // 
             // group2
             // 
@@ -113,6 +120,7 @@
             this.button5.Label = "正文文本";
             this.button5.Name = "button5";
             this.button5.ShowImage = true;
+            this.button5.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -127,13 +135,6 @@
             this.button7.Label = "表格";
             this.button7.Name = "button7";
             this.button7.ShowImage = true;
-            // 
-            // button8
-            // 
-            this.button8.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button8.Label = "定制首页";
-            this.button8.Name = "button8";
-            this.button8.ShowImage = true;
             // 
             // button9
             // 
