@@ -22,6 +22,7 @@ namespace ContractTypesettingAssistant
         {
             //创建正文
             create_style_zhengwen();
+            create_style_biaoti();
 
             //设置上下左右边距
             WordApp.ActiveDocument.PageSetup.TopMargin = 70;
@@ -48,8 +49,6 @@ namespace ContractTypesettingAssistant
                 null,
                 null,
                 null);
-
-            
         }
 
 
@@ -63,7 +62,7 @@ namespace ContractTypesettingAssistant
         //设置主标题格式
         private void button2_Click(object sender, RibbonControlEventArgs e)
         {
-            //WordApp.Selection.set_Style("合同主标题");
+            WordApp.Selection.set_Style("合同主标题");
         }
 
         //创建正文文本格式
@@ -94,6 +93,39 @@ namespace ContractTypesettingAssistant
 
         }
 
+        //创建合同主标题字体样式
+        private void create_style_biaoti()
+        {
+            Style style = null;
+            //添加和设置正文格式
+            try
+            {
+                style = WordApp.ActiveDocument.Styles["合同主标题"];
+            }
+            catch (Exception)
+            {
+                WordApp.ActiveDocument.Styles.Add("合同主标题");
+                style = WordApp.ActiveDocument.Styles["合同主标题"];
+            }
+
+            style.ParagraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpace1pt5;  //行距为1.5倍行距
+            style.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;       //文字居中
+            style.set_BaseStyle("");                                               //设置基准样式为（无样式）
+            style.set_NextParagraphStyle("正文");                                   //设置后续样式为“正文”
+            style.ParagraphFormat.FirstLineIndent = 0;                           //首行缩进0个字符
+
+            style.Font.NameFarEast = "方正小标宋简体";                           //中文字体
+            style.Font.NameAscii = "仿宋";                                       //英文格式
+            style.Font.NameOther = "仿宋";                                       //字符格式
+            style.Font.Name = "方正小标宋简体";                                  //格式名称
+            style.Font.Size = 40;                                                //设置字体大小
+        }
+
+        //创建合同编号部分的字体样式
+        private void create_style_bianhao()
+        {
+
+        }
  
     }
 }
