@@ -14,12 +14,15 @@ namespace ContractTypesettingAssistant
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
             WordApp = Globals.ThisAddIn.Application;
-            create_style_zhengwen();
+            
         }
 
         //设置合同模板全局，增加上下左右边距等
         private void button1_Click(object sender, RibbonControlEventArgs e)
         {
+            //创建正文
+            create_style_zhengwen();
+
             //设置上下左右边距
             WordApp.ActiveDocument.PageSetup.TopMargin = 70;
             WordApp.ActiveDocument.PageSetup.BottomMargin = 60;
@@ -28,9 +31,33 @@ namespace ContractTypesettingAssistant
 
             //全局大纲变为“正文”
             WordApp.ActiveDocument.Paragraphs.Format.OutlineLevel = WdOutlineLevel.wdOutlineLevelBodyText;
-            WordApp.ActiveDocument.SelectAllEditableRanges();
-            WordApp.Selection.Find.Text = ":";
-            WordApp.Selection.Find.Replacement.Text = "：+";
+
+            //把英文冒号替换为中文冒号
+            WordApp.Selection.Find.Execute(":",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "：",
+                WdReplace.wdReplaceAll,
+                null,
+                null,
+                null,
+                null);
+
+            
+        }
+
+
+        //设置正文格式
+        private void button5_Click(object sender, RibbonControlEventArgs e)
+        {
+            WordApp.Selection.ClearFormatting();
+            WordApp.Selection.set_Style("正文");
         }
 
         //设置主标题格式
@@ -67,11 +94,6 @@ namespace ContractTypesettingAssistant
 
         }
 
-        //设置正文格式
-        private void button5_Click(object sender, RibbonControlEventArgs e)
-        {
-            WordApp.Selection.ClearFormatting();
-            WordApp.Selection.set_Style("正文");
-        }
+ 
     }
 }
