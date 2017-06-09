@@ -36,9 +36,9 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
+            this.group2 = this.Factory.CreateRibbonGroup();
             this.button1 = this.Factory.CreateRibbonButton();
             this.button8 = this.Factory.CreateRibbonButton();
-            this.group2 = this.Factory.CreateRibbonGroup();
             this.button2 = this.Factory.CreateRibbonButton();
             this.button3 = this.Factory.CreateRibbonButton();
             this.button4 = this.Factory.CreateRibbonButton();
@@ -65,6 +65,18 @@
             this.group1.Label = "全局设置";
             this.group1.Name = "group1";
             // 
+            // group2
+            // 
+            this.group2.Items.Add(this.button2);
+            this.group2.Items.Add(this.button3);
+            this.group2.Items.Add(this.button4);
+            this.group2.Items.Add(this.button5);
+            this.group2.Items.Add(this.button6);
+            this.group2.Items.Add(this.button7);
+            this.group2.Items.Add(this.button9);
+            this.group2.Label = "格式设置";
+            this.group2.Name = "group2";
+            // 
             // button1
             // 
             this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -80,18 +92,6 @@
             this.button8.Name = "button8";
             this.button8.ShowImage = true;
             // 
-            // group2
-            // 
-            this.group2.Items.Add(this.button2);
-            this.group2.Items.Add(this.button3);
-            this.group2.Items.Add(this.button4);
-            this.group2.Items.Add(this.button5);
-            this.group2.Items.Add(this.button6);
-            this.group2.Items.Add(this.button7);
-            this.group2.Items.Add(this.button9);
-            this.group2.Label = "格式设置";
-            this.group2.Name = "group2";
-            // 
             // button2
             // 
             this.button2.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -106,6 +106,7 @@
             this.button3.Label = "编号部分";
             this.button3.Name = "button3";
             this.button3.ShowImage = true;
+            this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -113,6 +114,7 @@
             this.button4.Label = "首页页底";
             this.button4.Name = "button4";
             this.button4.ShowImage = true;
+            this.button4.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -128,6 +130,7 @@
             this.button6.Label = "章节";
             this.button6.Name = "button6";
             this.button6.ShowImage = true;
+            this.button6.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button6_Click);
             // 
             // button7
             // 
