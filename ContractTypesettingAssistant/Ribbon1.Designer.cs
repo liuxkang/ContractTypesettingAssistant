@@ -38,14 +38,13 @@
             this.group1 = this.Factory.CreateRibbonGroup();
             this.group2 = this.Factory.CreateRibbonGroup();
             this.button1 = this.Factory.CreateRibbonButton();
-            this.button8 = this.Factory.CreateRibbonButton();
             this.button2 = this.Factory.CreateRibbonButton();
             this.button3 = this.Factory.CreateRibbonButton();
             this.button4 = this.Factory.CreateRibbonButton();
             this.button5 = this.Factory.CreateRibbonButton();
             this.button6 = this.Factory.CreateRibbonButton();
             this.button7 = this.Factory.CreateRibbonButton();
-            this.button9 = this.Factory.CreateRibbonButton();
+            this.button8 = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -61,7 +60,6 @@
             // group1
             // 
             this.group1.Items.Add(this.button1);
-            this.group1.Items.Add(this.button8);
             this.group1.Label = "全局设置";
             this.group1.Name = "group1";
             // 
@@ -73,28 +71,23 @@
             this.group2.Items.Add(this.button5);
             this.group2.Items.Add(this.button6);
             this.group2.Items.Add(this.button7);
-            this.group2.Items.Add(this.button9);
+            this.group2.Items.Add(this.button8);
             this.group2.Label = "格式设置";
             this.group2.Name = "group2";
             // 
             // button1
             // 
             this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button1.Image = global::ContractTypesettingAssistant.Properties.Resources.全局设置;
             this.button1.Label = "全局设置";
             this.button1.Name = "button1";
             this.button1.ShowImage = true;
             this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
             // 
-            // button8
-            // 
-            this.button8.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button8.Label = "定制首页";
-            this.button8.Name = "button8";
-            this.button8.ShowImage = true;
-            // 
             // button2
             // 
             this.button2.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button2.Image = global::ContractTypesettingAssistant.Properties.Resources.主要标题;
             this.button2.Label = "主标题";
             this.button2.Name = "button2";
             this.button2.ShowImage = true;
@@ -103,6 +96,7 @@
             // button3
             // 
             this.button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button3.Image = global::ContractTypesettingAssistant.Properties.Resources.合同编号部分;
             this.button3.Label = "编号部分";
             this.button3.Name = "button3";
             this.button3.ShowImage = true;
@@ -111,6 +105,7 @@
             // button4
             // 
             this.button4.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button4.Image = global::ContractTypesettingAssistant.Properties.Resources.首页页底;
             this.button4.Label = "首页页底";
             this.button4.Name = "button4";
             this.button4.ShowImage = true;
@@ -119,6 +114,7 @@
             // button5
             // 
             this.button5.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button5.Image = global::ContractTypesettingAssistant.Properties.Resources.合同正文;
             this.button5.Label = "正文文本";
             this.button5.Name = "button5";
             this.button5.ShowImage = true;
@@ -127,6 +123,7 @@
             // button6
             // 
             this.button6.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button6.Image = global::ContractTypesettingAssistant.Properties.Resources.合同章节;
             this.button6.Label = "章节";
             this.button6.Name = "button6";
             this.button6.ShowImage = true;
@@ -135,16 +132,20 @@
             // button7
             // 
             this.button7.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button7.Image = global::ContractTypesettingAssistant.Properties.Resources.表格样式;
             this.button7.Label = "表格";
             this.button7.Name = "button7";
             this.button7.ShowImage = true;
+            this.button7.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button7_Click);
             // 
-            // button9
+            // button8
             // 
-            this.button9.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button9.Label = "页眉";
-            this.button9.Name = "button9";
-            this.button9.ShowImage = true;
+            this.button8.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button8.Image = global::ContractTypesettingAssistant.Properties.Resources.页眉;
+            this.button8.Label = "页眉";
+            this.button8.Name = "button8";
+            this.button8.ShowImage = true;
+            this.button8.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button8_Click);
             // 
             // Ribbon1
             // 
@@ -167,7 +168,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button8;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button3;
@@ -175,7 +175,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button5;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button6;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button7;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button9;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button8;
     }
 
     partial class ThisRibbonCollection

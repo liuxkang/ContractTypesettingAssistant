@@ -14,17 +14,24 @@ namespace ContractTypesettingAssistant
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
             WordApp = Globals.ThisAddIn.Application;
-            
+            button2.Enabled = false;
+            button3.Enabled = false;
+            button4.Enabled = false;
+            button5.Enabled = false;
+            button6.Enabled = false;
+            button7.Enabled = false;
+            button8.Enabled = false;
         }
 
         //设置合同模板全局，增加上下左右边距等
         private void button1_Click(object sender, RibbonControlEventArgs e)
         {
-            //创建正文
+            //创建各种样式
             create_style_zhengwen();
             create_style_biaoti();
             create_style_bianhao();
             create_style_zhangjie();
+            create_style_table();
 
             //设置上下左右边距
             WordApp.ActiveDocument.PageSetup.TopMargin = 70;
@@ -51,6 +58,13 @@ namespace ContractTypesettingAssistant
                 null,
                 null,
                 null);
+            button2.Enabled = true;
+            button3.Enabled = true;
+            button4.Enabled = true;
+            button5.Enabled = true;
+            button6.Enabled = true;
+            button7.Enabled = true;
+            button8.Enabled = true;
         }
 
 
@@ -112,6 +126,7 @@ namespace ContractTypesettingAssistant
             style.set_BaseStyle("正文");
             style.ParagraphFormat.OutlineLevel = WdOutlineLevel.wdOutlineLevel2;
             style.set_NextParagraphStyle("正文");
+            style.Font.Bold = 1;
 
         }
 
@@ -192,7 +207,7 @@ namespace ContractTypesettingAssistant
         }
 
         //创建合同表格内字体样式
-        private void create_style_intable()
+        private void create_style_table()
         {
             Style style = null;
             try
@@ -221,6 +236,18 @@ namespace ContractTypesettingAssistant
         private void button6_Click(object sender, RibbonControlEventArgs e)
         {
             WordApp.Selection.set_Style("合同章节");
+        }
+
+        //合同表格
+        private void button7_Click(object sender, RibbonControlEventArgs e)
+        {
+            WordApp.Selection.set_Style("合同表格");
+        }
+
+        //合同页眉
+        private void button8_Click(object sender, RibbonControlEventArgs e)
+        {
+
         }
     }
 }

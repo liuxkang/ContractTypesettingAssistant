@@ -163,6 +163,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Ribbon1.resx">
       <DependentUpon>Ribbon1.cs</DependentUpon>
@@ -192,6 +193,33 @@
     </Compile>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\图标.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\主要标题.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\合同编号部分.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\合同章节.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\合同正文.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\首页页底.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\表格样式.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\全局设置.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\页眉.jpg" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -204,7 +232,7 @@
     </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>30C48A78971DA9A969A7F0CB364A9E35058E8311</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>7B5D3243C6FC88A02E7B3EDCCD5B770B0DE2DC3B</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
