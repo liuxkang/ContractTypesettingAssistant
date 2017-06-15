@@ -101,6 +101,8 @@ namespace ContractTypesettingAssistant
             style.ParagraphFormat.CharacterUnitLeftIndent = 0;                              //左边缩进0个字符
             style.ParagraphFormat.FirstLineIndent = 5;
             style.ParagraphFormat.CharacterUnitFirstLineIndent = 2;                         //首行缩进两个字符
+            style.ParagraphFormat.CharacterUnitLeftIndent = 0;                              //左边缩进0个字符
+            style.ParagraphFormat.LeftIndent = 0;                                           //左边缩进0厘米
             style.ParagraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpaceExactly;       //行距设置为固定值
             style.ParagraphFormat.LineSpacing = 24;                                         //行距24磅
             style.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;    //左对齐
@@ -151,20 +153,21 @@ namespace ContractTypesettingAssistant
                 style = WordApp.ActiveDocument.Styles["合同主标题"];
             }
 
-            style.ParagraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpace1pt5;  //行距为1.5倍行距
+            style.ParagraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpace1pt5;          //行距为1.5倍行距
             style.ParagraphFormat.CharacterUnitLeftIndent = 0;                              //左边缩进0个字符
-            style.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;       //文字居中
+            style.ParagraphFormat.LeftIndent = 0;                                           //左边缩进0厘米
+            style.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;  //文字居中
             style.ParagraphFormat.OutlineLevel = WdOutlineLevel.wdOutlineLevel1;            //设置大纲级别1级
-            style.set_BaseStyle("");                                               //设置基准样式为（无样式）
-            style.set_NextParagraphStyle("正文");                                   //设置后续样式为“正文”
-            style.ParagraphFormat.FirstLineIndent = 0;                           //首行缩进0个字符
-            style.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;    //居中对齐
+            style.set_BaseStyle("");                                                        //设置基准样式为（无样式）
+            style.set_NextParagraphStyle("正文");                                           //设置后续样式为“正文”
+            style.ParagraphFormat.FirstLineIndent = 0;                                      //首行缩进0个字符
+            style.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;  //居中对齐
 
-            style.Font.NameFarEast = "方正小标宋简体";                           //中文字体
-            style.Font.NameAscii = "仿宋";                                       //英文格式
-            style.Font.NameOther = "仿宋";                                       //字符格式
-            style.Font.Name = "方正小标宋简体";                                  //格式名称
-            style.Font.Size = 40;                                                //设置字体大小
+            style.Font.NameFarEast = "方正小标宋简体";                                      //中文字体
+            style.Font.NameAscii = "仿宋";                                                  //英文格式
+            style.Font.NameOther = "仿宋";                                                  //字符格式
+            style.Font.Name = "方正小标宋简体";                                             //格式名称
+            style.Font.Size = 40;                                                           //设置字体大小
             style.Font.Bold = 0;
         }
 
@@ -184,6 +187,7 @@ namespace ContractTypesettingAssistant
             style.ParagraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpaceExactly;       //行距设置为固定值
             style.ParagraphFormat.LineSpacing = 30;                                         //行距30磅
             style.ParagraphFormat.CharacterUnitLeftIndent = 0;                              //左边缩进0个字符
+            style.ParagraphFormat.LeftIndent = 0;                                           //左边缩进0厘米
             style.set_BaseStyle("");                                                        //设置基准样式为（无样式）
             style.set_NextParagraphStyle("正文");                                           //设置后续样式为“正文”
             style.ParagraphFormat.FirstLineIndent = 0;                                      //首行缩进0个字符
@@ -234,7 +238,8 @@ namespace ContractTypesettingAssistant
             }
             style.set_BaseStyle("");
             style.ParagraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpaceSingle;              //单倍行距
-            style.ParagraphFormat.CharacterUnitLeftIndent = 0;                              //左边缩进0个字符
+            style.ParagraphFormat.CharacterUnitLeftIndent = 0;                                    //左边缩进0个字符
+            style.ParagraphFormat.LeftIndent = 0;                                                 //左边缩进0厘米
             style.ParagraphFormat.FirstLineIndent = 0;                                            //首行缩进0个字符
             style.ParagraphFormat.OutlineLevel = WdOutlineLevel.wdOutlineLevelBodyText;           //大纲级别正文文本
             style.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;          //左对齐
@@ -265,6 +270,7 @@ namespace ContractTypesettingAssistant
             style.ParagraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpaceExactly;               //行距为固定值
             style.ParagraphFormat.LineSpacing = 12;                                                 //行距为12磅
             style.ParagraphFormat.CharacterUnitLeftIndent = 0;                                      //左边缩进0个字符
+            style.ParagraphFormat.LeftIndent = 0;                                                   //左边缩进0厘米
             style.set_NextParagraphStyle("合同页眉");
             style.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;            //左对齐
             style.ParagraphFormat.FirstLineIndent = 0;
@@ -299,9 +305,8 @@ namespace ContractTypesettingAssistant
             WordApp.ActiveWindow.View.SeekView = WdSeekView.wdSeekCurrentPageHeader;
             WordApp.Selection.HeaderFooter.LinkToPrevious = true;
             WordApp.Selection.HeaderFooter.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphRight;
-
             WordApp.Selection.set_Style("合同页眉");
-
+            WordApp.ActiveWindow.View.SeekView = WdSeekView.wdSeekMainDocument;
         }
     }
 }
