@@ -36,8 +36,8 @@
         {
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.group2 = this.Factory.CreateRibbonGroup();
             this.button1 = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
             this.button2 = this.Factory.CreateRibbonButton();
             this.button3 = this.Factory.CreateRibbonButton();
             this.button4 = this.Factory.CreateRibbonButton();
@@ -63,6 +63,15 @@
             this.group1.Label = "全局设置";
             this.group1.Name = "group1";
             // 
+            // button1
+            // 
+            this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button1.Image = global::ContractTypesettingAssistant.Properties.Resources.全局设置;
+            this.button1.Label = "全局设置";
+            this.button1.Name = "button1";
+            this.button1.ShowImage = true;
+            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            // 
             // group2
             // 
             this.group2.Items.Add(this.button2);
@@ -74,15 +83,6 @@
             this.group2.Items.Add(this.button8);
             this.group2.Label = "格式设置";
             this.group2.Name = "group2";
-            // 
-            // button1
-            // 
-            this.button1.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button1.Image = global::ContractTypesettingAssistant.Properties.Resources.全局设置;
-            this.button1.Label = "全局设置";
-            this.button1.Name = "button1";
-            this.button1.ShowImage = true;
-            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -97,7 +97,7 @@
             // 
             this.button3.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.button3.Image = global::ContractTypesettingAssistant.Properties.Resources.合同编号部分;
-            this.button3.Label = "编号部分";
+            this.button3.Label = "首页页中";
             this.button3.Name = "button3";
             this.button3.ShowImage = true;
             this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
