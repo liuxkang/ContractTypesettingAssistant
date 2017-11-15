@@ -29,7 +29,7 @@ namespace ContractTypesettingAssistant
             //创建各种样式
             create_style_zhengwen();            //插件启动时创建 正文 格式
             create_style_biaoti();              //插件启动时创建 合同标题 格式
-            create_style_bianhao();             //插件启动时创建 编号部分 格式
+            create_style_bianhao();             //插件启动时创建 首页页中 格式
             create_style_zhangjie();            //插件启动时创建 合同章节 格式
             create_style_table();               //插件启动时创建 合同表格 格式
             create_style_yemei();               //插件启动时创建 合同页眉 格式
@@ -194,18 +194,18 @@ namespace ContractTypesettingAssistant
             style.Font.Bold = 0;
         }
 
-        //创建合同编号部分的字体样式
+        //创建合同首页页中的字体样式
         private void create_style_bianhao()
         {
             Style style = null;
             try
             {
-                style = WordApp.ActiveDocument.Styles["编号部分"];
+                style = WordApp.ActiveDocument.Styles["首页页中"];
             }
             catch(Exception)
             {
-                WordApp.ActiveDocument.Styles.Add("编号部分");
-                style = WordApp.ActiveDocument.Styles["编号部分"];
+                WordApp.ActiveDocument.Styles.Add("首页页中");
+                style = WordApp.ActiveDocument.Styles["首页页中"];
             }
             style.ParagraphFormat.LineSpacingRule = WdLineSpacing.wdLineSpaceExactly;       //行距设置为固定值
             style.ParagraphFormat.LineSpacing = 30;                                         //行距30磅
@@ -225,11 +225,11 @@ namespace ContractTypesettingAssistant
 
         }
 
-        //设置编号部分字体
+        //设置首页页中字体
         private void button3_Click(object sender, RibbonControlEventArgs e)
         {
             WordApp.Selection.ClearFormatting();
-            WordApp.Selection.set_Style("编号部分");
+            WordApp.Selection.set_Style("首页页中");
         }
 
         //首页页底签订时间 签订地点部分
