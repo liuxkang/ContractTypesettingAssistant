@@ -124,7 +124,7 @@ namespace ContractTypesettingAssistant
             style.ParagraphFormat.AutoAdjustRightIndent = 0;                            //自动调整右间距
             style.ParagraphFormat.DisableLineHeightGrid = 0;                                //段落中的字符与行网格不进行对齐
             style.ParagraphFormat.FarEastLineBreakControl = -1;                              //按中文习惯控制首尾字符。
-            style.ParagraphFormat.WordWrap = -1;         //在指定段落或文本框的西文单词中间断字换行
+            style.ParagraphFormat.WordWrap = -1;         //允许西文在单词中间换行
             style.ParagraphFormat.HangingPunctuation = -1;       //允许标点溢出边界
             style.ParagraphFormat.AddSpaceBetweenFarEastAndAlpha = 0;       //中文文字和拉丁文字之间自动添加空格
             style.ParagraphFormat.AddSpaceBetweenFarEastAndDigit = 0;          //中文文字和数字之间添加空格
