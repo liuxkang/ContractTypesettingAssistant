@@ -190,7 +190,7 @@ namespace ContractTypesettingAssistant
             style.Font.NameAscii = "仿宋";                                                  //英文格式
             style.Font.NameOther = "仿宋";                                                  //字符格式
             style.Font.Name = "方正小标宋简体";                                             //格式名称
-            style.Font.Size = 40;                                                           //设置字体大小
+            style.Font.Size = 30;                                                           //设置字体大小
             style.Font.Bold = 0;
         }
 
